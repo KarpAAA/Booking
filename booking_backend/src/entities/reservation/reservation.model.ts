@@ -21,6 +21,6 @@ export class Reservation {
   @ManyToOne(type => User, (user) => user.reservations)
   guest: User;
 
-  @ManyToOne(type => Apartment, (apartment) => apartment.reservations)
+  @ManyToOne(type => Apartment, (apartment) => apartment.reservations,  {onDelete: "CASCADE"})
   apartment: Apartment;
 }

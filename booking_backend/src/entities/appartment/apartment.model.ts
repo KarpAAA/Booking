@@ -27,7 +27,9 @@ export class Apartment {
   @Column()
   category: Category
 
-  @OneToMany(type => Reservation, (reservation) => reservation.apartment)
+  @OneToMany(type => Reservation, (reservation) => reservation.apartment,
+      {cascade: true})
+
   reservations: Reservation[];
 
   @ManyToOne( type => User, (owner) => owner.ownerships, {eager: true})
