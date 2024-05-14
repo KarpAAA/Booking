@@ -7,13 +7,14 @@ import { CaslModule } from './modules/casl/casl.module';
 import { ServeStaticModule } from "@nestjs/serve-static";
 import { join } from 'path';
 import { ReservationModule } from './modules/reservation/reservation.module';
+import {ConfigModule} from "@nestjs/config";
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     CaslModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      port: 5432,
       host: process.env.DATABASE_HOST,
       username: process.env.DATABASE_USERNAME,
       password: process.env.DATABASE_PASSWORD,
