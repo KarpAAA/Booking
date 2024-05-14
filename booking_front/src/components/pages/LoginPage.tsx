@@ -81,7 +81,7 @@ export const LoginPage = () => {
                     </h3>
                     <form onSubmit={(e) =>
                         isLogin ? handleLoginSubmit(e) : handleRegisterSubmit(e)}>
-                        <CustomInput name='username' type={""} labelText={"Eлектронна адреса:"}/>
+                        <CustomInput name='username' type={"email"} labelText={"Eлектронна адреса:"}/>
                         <CustomInput name='password' type={"password"} labelText={"Пароль:"}/>
 
                         {!isLogin &&

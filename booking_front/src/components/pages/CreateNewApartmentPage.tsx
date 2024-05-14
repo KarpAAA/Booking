@@ -7,13 +7,14 @@ import {Category} from "../../types";
 import {useCreateApartmentMutation, useFindApartmentByIdQuery, useUpdateApartmentMutation} from "../../store/api";
 import {useSelector} from "react-redux";
 import {RootState} from "../../store/store";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 interface CreateNewApartmentPageProps {
     edit?: boolean
 }
 
 export const CreateNewApartmentPage: FC<CreateNewApartmentPageProps> = ({edit}) => {
+    const navigate = useNavigate();
     const id = useParams()['id'];
     const [image, setImage] = useState<string>('');
     const [createApartment] = useCreateApartmentMutation();
@@ -38,6 +39,7 @@ export const CreateNewApartmentPage: FC<CreateNewApartmentPageProps> = ({edit}) 
             }
             else{
                 createApartment(formData);
+                navigate('../');
             }
 
         }
@@ -134,7 +136,8 @@ export const CreateNewApartmentPage: FC<CreateNewApartmentPageProps> = ({edit}) 
                             className={'px-2 py-2 w-full rounded border border-solid border-black text-black bg-white text-lg mt-1'}
                         ></textarea>
                         <button
-                            className={'bg-green-700 hover:bg-green-950 py-2 px-3 text-white rounded w-40 text-lg mt-3'}>Create
+                            className={'bg-green-700 hover:bg-green-950 py-2 px-3 text-white rounded w-40 text-lg mt-3'}>
+                            {edit ? "Зберегти" : "Створити"}
                         </button>
                     </div>
 

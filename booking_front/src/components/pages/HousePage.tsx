@@ -61,7 +61,7 @@ export const HousePage = () => {
             setSelectedDatesPrice(apartment.price * daysBetweenDates(arrivalDate, departureDate));
         }
     }
-    const handleReservate = () => {
+    const handleReservation = () => {
 
         if (selectedDatesRange && user && apartment) {
             const arrivalDate = new Date(selectedDatesRange[0]).toLocaleDateString();
@@ -74,6 +74,9 @@ export const HousePage = () => {
                     userId: user.id,
                     price: selectedDatesPrice
                 });
+
+            setSelectedDatesPrice(0);
+            setSelectedDatesRange(null);
         }
 
     }
@@ -117,6 +120,7 @@ export const HousePage = () => {
                                 </div>
                                 <div className={'text-black text-lg bg-white flex-grow rounded'}>
                                     <DateRangePicker
+                                        value={selectedDatesRange}
                                         shouldDisableDate={shouldDisableDate}
                                         onChange={handleDateChange}
                                         character=' --- '
@@ -131,7 +135,7 @@ export const HousePage = () => {
                                 </span>
                                 </div>
                                 <button
-                                    onClick={handleReservate}
+                                    onClick={handleReservation}
                                     style={{backgroundColor: '#003B95'}}
                                     className={'text-white text-lg flex-grow rounded items-center ml-2 border border-white'}>
                                     Зарезезрвувати

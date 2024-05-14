@@ -30,10 +30,10 @@ export const MainPage = () => {
                 >
                     <div className={'flex flex-col m-auto w-4/5  py-20'}>
                         <p className={'text-5xl text-white w-6/12 font-bold'}>
-                            Візьміть із собою всю коробку з іграшками
+                            Забронюй будинок мрії вже зараз
                         </p>
                         <p className={'text-2xl text-white w-6/12 py-5'}>
-                            Розслабтеся в будинку для відпочинку
+                            Незабутні враження на вас чекають
                         </p>
                     </div>
 
