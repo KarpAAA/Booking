@@ -9,6 +9,7 @@ import { User } from "../../entities/user/user.model";
 import { Action, CaslAbilityFactory } from "../casl/casl-ability.factory/casl-ability.factory";
 import * as fs from "fs";
 import { v4 } from "uuid";
+import * as path from "path";
 
 @Injectable()
 export class ApartmentService {
@@ -44,8 +45,7 @@ export class ApartmentService {
   private uploadFile = (image: Express.Multer.File) => {
     const imageName = v4() + "." + image.mimetype.substring(6);
     const imagePath =
-      'C:\\Users\\ivank\\WebstormProjects\\booking\\booking_backend\\client\\apartments\\'
-      + imageName;
+        path.join(__dirname, '..', '..', '..', 'client', 'apartments', imageName);
     fs.writeFileSync(imagePath, image.buffer);
     return imageName;
   }
