@@ -12,10 +12,10 @@ These instructions will help you get a copy of the project and run it on your lo
 git clone https://github.com/KarpAAA/React-App-2
 ```
 
-2. Add booking_backend/.env
+2. Add booking_backend/.env for configuring database
 
 ```bash
-DATABASE_HOST=postgres
+DATABASE_HOST=postgres(for docker) | localhost(for local)
 DATABASE_USERNAME=postgres
 DATABASE_PASSWORD=root
 DATABASE_NAME=booking_db
