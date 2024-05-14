@@ -1,7 +1,9 @@
 # Booking
 
 Project for apartment sharing & booking
-
+The program provides access from two roles OWNER with this role the user can add new apartments, edit them and delete them<br>
+and the role USER with this role the user can make reservations for apartments.<br>
+To register, you need to enter an email and a password of at least 8 characters<br>
 ## Instalation
 
 These instructions will help you get a copy of the project and run it on your local machine for development and testing.
